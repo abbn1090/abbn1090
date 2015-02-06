@@ -1,0 +1,30 @@
+{% load comments %}
+{% load staticfiles %}
+<h2>Write A Comment</h2>
+
+
+{% get_comment_form for ablog.entry as form %}
+
+
+      
+      
+      
+      <form action="{% comment_form_target %}" method="post">
+      {% csrf_token %}
+   
+        <div class="one_third first">
+          <label for="name">Name <span>*</span></label>
+          <input type="text" name="name" id="name" value="" size="22">
+        </div>
+        
+       
+        <div class="block clear">
+          <label for="comment">Your Comment</label>
+          <textarea name="comment" id="comment" cols="25" rows="10"></textarea>
+        </div>
+        <div>
+          <input name="submit" type="submit" value="Submit Form">
+          &nbsp;
+          <input name="reset" type="reset" value="Reset Form">
+        </div>
+      </form>

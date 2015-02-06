@@ -1,0 +1,51 @@
+{% load comments %}
+{% load staticfiles %}
+
+
+
+<ul>
+
+{% get_comment_list for ablog.entry object_pk as comment_list %}
+{% for comment in comment_list %}
+        <li>
+          <article>
+            <header>
+               <figure class="avatar"><img src="{% static 'images/demo/avatar.png' %}"  alt=""></figure>
+              <address>
+              By <a href="#">{{ comment.user_name }}</a>
+              </address>
+              <time datetime="2000-04-06T08:15+00:00"> {{ comment.submit_date }}</time>
+            </header>
+            <div class="comcont">
+              <p>{{ comment.comment }}</p>
+            </div>
+          </article>
+        </li>
+     {% endfor %}
+   
+      </ul>
+      
+      
+      
+      
+      <ul>
+
+
+        <li>
+          <article>
+            <header>
+               <figure class="avatar"><img src="{% static 'images/demo/avatar.png' %}"  alt=""></figure>
+              <address>
+              By <a href="#">A Name</a>
+              </address>
+              <time datetime="2000-04-06T08:15+00:00">Friday, 6<sup>th</sup> April 2000 @08:15:00</time>
+            </header>
+            <div class="comcont">
+              <p>This is an example of a comment made on a post. You can either edit the comment, delete the comment or reply to the comment. Use this as a place to respond to the post or to share what you are thinking.</p>
+            </div>
+          </article>
+        </li>
+        
+      </ul>
+      
+       
